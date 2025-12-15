@@ -1,13 +1,13 @@
+import { View } from "moti";
 import React from "react";
 import { Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
-const index = () => {
+const Home = () => {
   return (
-    <SafeAreaView edges={["top"]} className="flex-1">
-      <Text>index</Text>
-    </SafeAreaView>
+    <View>
+      <Text>Home</Text>
+    </View>
   );
 };
 
-export default index;
+export default Home;

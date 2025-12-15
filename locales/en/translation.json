@@ -1,0 +1,12 @@
+{
+  "namaste": "Namaste!",
+  "choose_language": "Choose your preferred language",
+  "location_nearby_title": "Shop Nearby",
+  "location_nearby_desc": "To find the nearset store, allow location access while you're using the app",
+  "notification_title": "Get Notified",
+  "notification_desc": "To know the real-time status of your orders, we'll send you notifications.",
+  "continue": "Continue",
+  "later": "Later",
+  "select_location": "Select your location",
+  "select_location_decs": "Drag the pin or move the map to choose where you are."
+}
