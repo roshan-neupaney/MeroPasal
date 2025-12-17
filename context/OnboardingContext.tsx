@@ -47,7 +47,7 @@ export function OnboardingProvider({
       const route = nextStep
         ? (`/(onboarding)/${nextStep}` as const)
         : ("/(onboarding)" as const);
-      router.push(route);
+      router.replace(route);
     } else {
       router.replace("/(app)");
     }

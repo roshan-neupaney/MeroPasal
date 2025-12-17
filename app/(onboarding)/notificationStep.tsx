@@ -4,6 +4,7 @@ import { useOnboarding } from "@/context/OnboardingContext";
 import Button from "@/components/Button";
 import { MotiImage, MotiView } from "moti";
 import { useTranslation } from "react-i18next";
+import * as Notifications from "expo-notifications";
 
 const NotificationStep = () => {
   const { next } = useOnboarding();
@@ -11,16 +12,16 @@ const NotificationStep = () => {
 
   const requestNotificationPermission = async () => {
     try {
-      // const { status } = await Notifications.requestPermissionsAsync();
-      // if (status === 'granted') {
-      next();
-      // } else {
-      //   Alert.alert(
-      //     'Notifications Disabled',
-      //     'You can always enable them later in settings. Continuing without notifications.',
-      //     [{ text: 'OK', onPress: next }]
-      //   );
-      // }
+      const { status } = await Notifications.requestPermissionsAsync();
+      if (status === "granted") {
+        next();
+      } else {
+        Alert.alert(
+          "Notifications Disabled",
+          "You can always enable them later in settings. Continuing without notifications.",
+          [{ text: "OK", onPress: next }]
+        );
+      }
     } catch (error) {
       console.error("Notification permission error:", error);
       Alert.alert("Error", "Something went wrong. Skipping this step.");

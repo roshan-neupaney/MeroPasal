@@ -22,7 +22,7 @@ export default function RootLayout() {
         <StatusBar barStyle={"dark-content"} />
         <Stack screenOptions={{ headerShown: false, animation: "none" }}>
           <Stack.Screen name="(onboarding)" />
-          <Stack.Screen name="(app)/index" />
+          <Stack.Screen name="(app)" />
         </Stack>
       </OnboardingProvider>
     </SafeAreaProvider>

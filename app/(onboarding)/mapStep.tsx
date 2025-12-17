@@ -26,6 +26,7 @@ const MapStep = () => {
       const loc = await AsyncStorage.getItem("location");
       if (loc) {
         await AsyncStorage.setItem("setup", "Completed");
+        setLoading(false);
         next();
       }
       const region = {
@@ -36,7 +37,6 @@ const MapStep = () => {
       };
       setInitialRegion(region);
       setSelectedLocation(region)
-      setLoading(false);
     })();
   }, []);
 
@@ -56,12 +56,7 @@ const MapStep = () => {
   };
 
   if (loading) {
-    return (
-      <View className="flex-1 justify-center items-center bg-white">
-        <ActivityIndicator size="large" />
-        <Text className="mt-4 text-lg">Loading map...</Text>
-      </View>
-    );
+    return;
   }
 
   return (
